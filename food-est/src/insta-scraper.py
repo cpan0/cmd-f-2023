@@ -9,14 +9,11 @@ import time
 import os
 
 
-# takes user input of username and string to search
 def get_user_requirements():
     url = 'https://www.instagram.com/'
-    #username = input("Enter the username you wish to scrape:")
     username = "accounts/login"
     strings_to_search = ["food", "drinks", "snacks", "drink", "snack", "cookies", "cookie", "buns", "bun", "chocolate", "cake", "cakes", "pizza", "pizzas", "candies", "candy", "burger", "burgers", "sandwich", "sandwiches", "popcorn", "pie", "pies", "bakery", "fried", "baked", "cheese", "ham", "chicken", "coffee", "pastries", "tea"]
     #strings_to_search = ["food", "drinks", "snacks", "drink", "snack", "cookies", "cookie", "buns", "bun", "chocolate", "cake", "cakes", "pizza", "pizzas", "sandwich", "sandwiches", "popcorn", "pie", "pies", "bakery", "baked", "cheese", "coffee", "pastries", "tea"]
-    #string_to_search = input("Enter the string to search:")
     url += str(username)
     get_links(url, strings_to_search)
 
@@ -30,7 +27,7 @@ def get_links(url, strings_to_search):
     ig_phone = "ks.ivanova1989"
     ig_pass = "password1989"
     
-
+    # log in the account
     #myElem = WebDriverWait(browser, 15).until(EC.visibility_of_element_located((By.XPATH, "//div[text()='Log in']")))
     #browser.find_element(By.XPATH, "//div[text()='Log in']").click() 
     myElem = WebDriverWait(browser, 15).until(EC.visibility_of_element_located((By.XPATH, "//input[@name='username']")))
@@ -38,6 +35,7 @@ def get_links(url, strings_to_search):
     browser.find_element(By.XPATH, "//input[@aria-label='Password']").send_keys(ig_pass)
     browser.find_element(By.XPATH, "//div[text()='Log in']").click() 
 
+    #if there is a popup, press the button to get rid of it
     try:
         myElem = WebDriverWait(browser, 15).until(EC.visibility_of_element_located((By.XPATH, "//button[text()='Save information']")))
         browser.find_element(By.XPATH, "//button[text()='Save information']").click()
@@ -64,35 +62,39 @@ def get_links(url, strings_to_search):
     #element = browser.find_element(By.XPATH, "//article")
 		
     #browser.executeScript("arguments[0].scrollIntoView();", element)
-    last_height = browser.execute_script("return document.body.scrollHeight")
+    #last_height = browser.execute_script("return document.body.scrollHeight")
     i = 1
+    # usually about 3-4 posts are on the feed
     while i<6:
         source = browser.page_source
         data = BeautifulSoup(source, 'html.parser')
-
+        # if there is more, press it
         try:
             myElem = WebDriverWait(browser, 15).until(EC.visibility_of_element_located((By.XPATH, "//div[text() = 'more']")))
             browser.find_element(By.XPATH, "//div[text() = 'more']").click()
         except Exception:
             pass
 
+        # scrap captions 
         #account = data.find("href")
         captions = data.find_all("h1")
         #caption_for_one_post = ' '.join([caption.text for caption in captions])
         #body = data.find('body')
         #script = body.find('span')
 
-        """
+        # attempt at stopping at "You've comlpetely caught up" element, failed
+        '''
         try:
             browser.execute_script("window.scrollBy(0, 200);")
             #browser.find_element(By.XPATH, "//span[text() = 'You've completely caught up']")
-            browser.find_element(By.XPATH, "//div[text() = 'You've completely caught up']")
+            browser.find_element(By.XPATH, "//span[text() = 'You've completely caught up']")
             print("You go here?")
             break
         except Exception:
             pass
-        """
+        '''
 
+        # scroll to the next post
         try: 
             element = browser.find_element(By.XPATH, "//article["+str(i)+"]")
             #element = browser.find_element(By.XPATH, "//div")
@@ -115,6 +117,7 @@ def get_links(url, strings_to_search):
        #     if any(s in caption.text for s in strings_to_search):
        #         if (caption.text not in links):
        #             links.append(caption.text)
+
         for caption in captions:
             links.append(caption.text)
 
@@ -124,7 +127,8 @@ def get_links(url, strings_to_search):
                 to_add = 'https://www.instagram.com' + link.get('href')
                 if to_add not in links:
                     links.append(to_add) """
-
+        
+        # allow time to load the page
         time.sleep(3)
         i+=1
         #new_height = browser.execute_script("return document.body.scrollHeight")
@@ -141,9 +145,10 @@ def get_links(url, strings_to_search):
 
 
 
-# this searches the string in the caption of all the posts
+# this searches the string in the captions of all the posts
 def filter_captions(links, strings_to_search):
     filtered_links = []
+    # add captions that contain words of interest to the resulting array
     for link in links:
             if any(s in link.lower() for s in strings_to_search):
                 if (link not in filtered_links):
@@ -155,7 +160,7 @@ def filter_captions(links, strings_to_search):
     write_to_file(filtered_links)
 
 
-# finally this stores the resulting links in a txt file
+# finally this stores the resulting captions in a txt file
 def write_to_file(links):
     path = "./src"
     os.chdir(path)
