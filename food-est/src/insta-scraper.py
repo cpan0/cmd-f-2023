@@ -8,6 +8,8 @@ from bs4 import BeautifulSoup
 import time
 import os
 
+# based heavily on the code by Ninad Kulkarni : https://github.com/Ninkuk/Instagram-Caption-Scraper/blob/master/CaptionSearch.py 
+
 
 def get_user_requirements():
     url = 'https://www.instagram.com/'
@@ -76,7 +78,7 @@ def get_links(url, strings_to_search):
             pass
 
         # scrap captions 
-        #account = data.find("href")
+        #account = data.find("href") - was trying to get the links - didn't work
         captions = data.find_all("h1")
         #caption_for_one_post = ' '.join([caption.text for caption in captions])
         #body = data.find('body')
