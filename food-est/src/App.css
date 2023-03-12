@@ -96,6 +96,7 @@ a:active { text-decoration: none; }
   text-align: center;
   /* padding: 0px 16px 0px 0px; */
   padding: 14px 14px 14px 14px;
+
   text-decoration: none;
   font-size: calc(10px + 2vmin);
   /* font-size: 18px; */
@@ -176,6 +177,16 @@ div{
   display:inline-block;
   padding:0px;
 
+}
+
+.footer {
+  height: 75px;
+  width: 75px;
+}
+
+.footer {
+  height: 75px;
+  width: 75px;
 }
 
 .postingWrap {
