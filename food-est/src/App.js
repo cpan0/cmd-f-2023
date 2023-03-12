@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import React from "react"
 import './App.css';
 import FreeFoodTable from './components/table.js';
+import Resources from './components/resources.js';
 import FreeFoodSrc from './components/table.js';
 import Collapsible from './components/collapsible.js';
 
@@ -12,8 +13,15 @@ function App() {
       <header className="App-header">
         
         <h1>TuumEats</h1>
+        <div className="topnav">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#resources">Resources</a>
+        </div>
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <FreeFoodTable id="foodTable"/>
+        <Resources/>
+
         <div class="search">
 					<button id="search-button" class="button" >Give me food pls 🔍</button>
 				</div>
