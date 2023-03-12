@@ -51,6 +51,11 @@ text {
   color: #ffc9b9;
 }
 
+.events {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .search-button {
   font-weight: bold;
   border-radius: 0%;
@@ -187,24 +192,6 @@ div{
 .footer {
   height: 75px;
   width: 75px;
-}
-
-.postingWrap {
-  position:relative;
-  text-align: center;
-  flex-direction: row;
-
-}
-
-.posting {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #000;
-  font-family: 'Patrick Hand', cursive, Verdana, Geneva, Tahoma, sans-serif;
-  overflow: scroll;
-  padding:10px;
 }
 
 #resultIntro {

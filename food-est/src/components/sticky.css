@@ -1,0 +1,29 @@
+.postingWrap {
+    padding: 5px 5px 5px 5px;
+  }
+
+  
+  .posting {
+    color: #000;
+    font-family: 'Patrick Hand', cursive, Verdana, Geneva, Tahoma, sans-serif;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-size:25px;
+
+    /* position: absolute;
+    top: 5%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+    max-height: 50%;
+    padding:10px;
+    font-size: 50%; */
+
+  }
+
+  /* position: absolute;
+  top: 5%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+  max-height: 50%;
+  padding:10px;
+  font-size: 50%; */
