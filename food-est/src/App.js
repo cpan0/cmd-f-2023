@@ -26,6 +26,7 @@ function App() {
         
         <body>
           <p id="resultIntro">Here's where you can grab some free food on campus: (you can thank us later;))</p>
+          <div id="postings"></div>
           <div className="postingWrap">
           <img src={note} alt="Sticky note" style={{width:"50%"}}></img>
           <div className="posting">heyo heyo heyo heyo heyo heyo heyoooo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo </div>
@@ -84,24 +85,39 @@ function tom() {
   );
 }
 
+
 var search_button = document.getElementById("search-button");
 if(search_button != null) {
   search_button.addEventListener("click", getFood);
 }
+ window.onload = function() {
+  getFood();
+ }
 
-function getFood(e) {
+function getFood() {
 
-  e.preventDefault();
-  // get array of events
+  var fs = require("fs");
 
-  // for each elem:
-  // var newElem = React.createElement(FreeFoodSrc, {link:"google.com", group:"SUS", title:"End of year bandquet", date: "May 6, 2026"});
-
-  // document.getElementById("foodT").appendChild(newElem);
-  // document.getElementById("foodTable").setAttribute("visibility", "visible");
+  alert("hi!");
+    // var posting = fs.readFileSync("./scraped_data.txt");
+    // var nextSeparator;
+    // var nextPost;
+    // while(posting != "") {
+    //   nextPost = posting.substring(0, posting.indexOf("\n"));
+    //   nextSeparator = posting.indexOf("\n");
+    //   if(nextSeparator == -1) {
+    //     var sticky = React.createElement(Sticky, {e: posting});
+    //     document.getElementById("postings").appendChild(sticky);
+    //     break;
+    //   } else {
+    //     var sticky = React.createElement(Sticky, {e: nextPost});
+    //    document.getElementById("postings").appendChild(sticky);
+    //    posting = posting.substring(nextSeparator);
+    //   }
+    // }
   
-  // var fs = require("fs");
-  // var text = 
+  
+  
 }
 
 export default App;

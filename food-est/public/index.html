@@ -6,6 +6,31 @@
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
 <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+<!-- <script type = "text/javascript">  
+  function getFood() {   
+    var fs = require("fs");
+  // for every file in ./data or smt
+
+    alert("hi!");
+    var posting = fs.readFileSync("./scraped_data.txt");
+    var nextSeparator;
+    var nextPost;
+    while(posting != "") {
+      nextPost = posting.substring(0, posting.indexOf("\n"));
+      nextSeparator = posting.indexOf("\n");
+      if(nextSeparator == -1) {
+        var sticky = React.createElement(Sticky, {e: posting});
+        document.getElementById("postings").appendChild(sticky);
+        break;
+      } else {
+        var sticky = React.createElement(Sticky, {e: nextPost});
+       document.getElementById("postings").appendChild(sticky);
+       posting = posting.substring(nextSeparator);
+      }
+    }
+  }  -->
+             
+  </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
