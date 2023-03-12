@@ -14,8 +14,8 @@ def get_user_requirements():
     url = 'https://www.instagram.com/'
     #username = input("Enter the username you wish to scrape:")
     username = "accounts/login"
-    #strings_to_search = ["food", "drinks", "snacks", "drink", "snack", "cookies", "cookie", "buns", "bun", "chocolate", "cake", "cakes", "pizza", "pizzas", "candies", "candy", "burger", "burgers", "sandwich", "sandwiches", "popcorn", "pie", "pies", "bakery", "fried", "baked", "cheese", "ham", "chicken", "coffee", "pastries", "tea"]
-    strings_to_search = ["food", "drinks", "snacks", "drink", "snack", "cookies", "cookie", "buns", "bun", "chocolate", "cake", "cakes", "pizza", "pizzas", "sandwich", "sandwiches", "popcorn", "pie", "pies", "bakery", "baked", "cheese", "coffee", "pastries", "tea"]
+    strings_to_search = ["food", "drinks", "snacks", "drink", "snack", "cookies", "cookie", "buns", "bun", "chocolate", "cake", "cakes", "pizza", "pizzas", "candies", "candy", "burger", "burgers", "sandwich", "sandwiches", "popcorn", "pie", "pies", "bakery", "fried", "baked", "cheese", "ham", "chicken", "coffee", "pastries", "tea"]
+    #strings_to_search = ["food", "drinks", "snacks", "drink", "snack", "cookies", "cookie", "buns", "bun", "chocolate", "cake", "cakes", "pizza", "pizzas", "sandwich", "sandwiches", "popcorn", "pie", "pies", "bakery", "baked", "cheese", "coffee", "pastries", "tea"]
     #string_to_search = input("Enter the string to search:")
     url += str(username)
     get_links(url, strings_to_search)
@@ -27,8 +27,8 @@ def get_links(url, strings_to_search):
     browser = webdriver.Chrome()
     browser.get(url)
 
-    ig_phone = "moonbin_ieeee"
-    ig_pass = "Forgiveaways"
+    ig_phone = "ks.ivanova1989"
+    ig_pass = "password1989"
     
 
     #myElem = WebDriverWait(browser, 15).until(EC.visibility_of_element_located((By.XPATH, "//div[text()='Log in']")))
@@ -66,7 +66,7 @@ def get_links(url, strings_to_search):
     #browser.executeScript("arguments[0].scrollIntoView();", element)
     last_height = browser.execute_script("return document.body.scrollHeight")
     i = 1
-    while i<4:
+    while i<7:
         source = browser.page_source
         data = BeautifulSoup(source, 'html.parser')
 
