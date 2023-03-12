@@ -2,12 +2,14 @@ import logo from './logo.png';
 import footer from './footer.png';
 import note from "./note.png";
 import React from "react"
+import scraped_data from "./scraped_data.txt";
 import './App.css';
 // import FreeFoodTable from './components/table.js';
 import FreeFoodSrc from './components/table.js';
 import Collapsible from './components/collapsible.js';
 import Tom from './components/tom.js';
 import Sticky from './components/sticky.js';
+// import * as fs from 'fs';
 
 
 function App() {
@@ -27,11 +29,9 @@ function App() {
         
         <body>
           <p id="resultIntro">Here's where you can grab some free food on campus: (you can thank us later;))</p>
-          <div id="events"></div>
-          <div className="postingWrap">
-          <img src={note} alt="Sticky note" style={{width:"50%"}}></img>
-          <div className="posting">heyo heyo heyo heyo heyo heyo heyoooo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo </div>
+          <div id="events">
           </div>
+          
 
         {/* <div class="search">
 					<button id="search-button" class="button" >🍗 GIMME. DA. FOOD. 🍴</button>
@@ -97,10 +97,49 @@ if(search_button != null) {
 
 function getFood() {
 
-  var fs = require("fs");
+  // var fs = require('fs-extra');
+  // const fr = new FileReader();
+  alert("hiya!");
+  let newKids = "";
+  fetch(scraped_data)
+  .then(function(data) {
+    alert(data);
+    return data.text()
+      .then(function(posting) {
+        alert(posting);
+        var nextSeparator;
+        var nextPost;
+        while(posting != "") {
+          nextPost = posting.substring(0, posting.indexOf("\n") -1);
+          // alert("nextPost: " + nextPost);
+          nextSeparator = posting.indexOf("\n");
+          if(nextSeparator == -1) {
+            // var sticky = React.createElement(Sticky, {e: posting});
+            // document.getElementById("postings").appendChild(sticky);
+            newKids += `<Sticky e=` + '"' + `${posting}` + '"' + `></Sticky>`;
+            alert("posting: " + posting);
+            break;
+          } else {
+            // var sticky = React.createElement(Sticky, {e: nextPost});
+          // document.getElementById("events").appendChild(sticky);
+          newKids += `<Sticky e=` + '"' + `${nextPost}` + '"' + `></Sticky>`;
+          alert("nextPost: " + nextPost);
+          posting = posting.substring(nextSeparator + 1);
+          
 
-  alert("hi!");
-    // var posting = fs.readFileSync("./scraped_data.txt");
+          }
+        }
+        alert("done!");
+        alert(newKids);
+        alert(document.getElementById("events").textContent);
+        document.getElementById("events").innerHTML = newKids;
+        alert(document.getElementById("events").innerHTML);
+      }
+      );}
+  );
+
+
+    // var posting = fs.readFileSync("./src/scraped_data.txt");
     // var nextSeparator;
     // var nextPost;
     // while(posting != "") {
