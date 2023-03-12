@@ -18,7 +18,9 @@ function App() {
           <a href="#about">About</a>
           <a href="#resources">Resources</a>
         </div>
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        
+        <body>
+          {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <FreeFoodTable id="foodTable"/>
         <Resources/>
 
@@ -35,6 +37,8 @@ function App() {
           <tbody id="foodEvents"></tbody>
         </table>
         <Collapsible desc="desc here"/>
+
+        </body>
 
 
  
