@@ -7,6 +7,7 @@ import './App.css';
 import FreeFoodSrc from './components/table.js';
 import Collapsible from './components/collapsible.js';
 import Tom from './components/tom.js';
+import Sticky from './components/sticky.js';
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
         
         <body>
           <p id="resultIntro">Here's where you can grab some free food on campus: (you can thank us later;))</p>
-          <div id="postings"></div>
+          <div id="events"></div>
           <div className="postingWrap">
           <img src={note} alt="Sticky note" style={{width:"50%"}}></img>
           <div className="posting">heyo heyo heyo heyo heyo heyo heyoooo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo </div>
