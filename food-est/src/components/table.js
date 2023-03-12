@@ -7,20 +7,29 @@ function FreeFoodTable() {
     // }, [])
 
     return (
-        <div className="results">
-			<table id="result-table">
-			    <caption id="table-title">Here's where you can get free food soon on campus:</caption>
-				<thead id = "outputHead">
-                    <tr>
-                        <td>Event</td>
-                        <td>Organizer</td>
-                        <td>Date</td>
-                        <td>Restricted Guests?</td>
-                    </tr>
-                </thead>
-				<tbody id="output"></tbody>
-			</table>
-		</div>
+        // <div className="results">
+		// 	<table id="result-table">
+		// 	    <caption id="table-title">Here's where you can get free food soon on campus:</caption>
+		// 		<thead id = "outputHead">
+        //             <tr>
+        //                 <td>Event</td>
+        //                 <td>Organizer</td>
+        //                 <td>Date</td>
+        //                 <td>Restricted Guests?</td>
+        //             </tr>
+        //         </thead>
+		// 		<tbody id="output"></tbody>
+		// 	</table>
+		// </div>
+        <table id="foodTable">
+          <tr>
+            <th>Event</th>
+            <th>Organizer</th>
+            <th>Date</th>
+            <th><Collapsible desc="desc here"/></th>
+          </tr>
+          <tbody id="foodEvents"></tbody>
+        </table>
     );
 }
 
