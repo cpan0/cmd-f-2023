@@ -2,7 +2,7 @@
 // import "./navbar.css"
 import "../App.css"
 
-function NavBar() {
+function NavBar({}) {
     return(
         <ul>
             <li><a href="google.com">Home</a></li>
