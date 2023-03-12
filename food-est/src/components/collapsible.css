@@ -1,0 +1,37 @@
+/* reference: https://www.w3schools.com/howto/howto_js_collapsible.asp */
+.collapsible {
+    background-color: #fefee3;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 14px;
+  }
+  
+ .active, .collapsible:hover {
+    background-color: #abe188;
+  }
+  
+    .content {
+    max-height: 0;
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.15s ease-out;
+    background-color: #e6e693;
+  }
+
+  .collapsible:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+  }

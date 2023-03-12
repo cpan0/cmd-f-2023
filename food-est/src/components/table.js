@@ -1,3 +1,4 @@
+import React from 'react';
 
 function FreeFoodTable() {
     // useEffect(() => {
@@ -23,7 +24,7 @@ function FreeFoodTable() {
     );
 }
 
-function FreeFoodSrc({link, group, title, date, isRestricted}) {
+function FreeFoodSrc({link, group, title, date}) {
     // useEffect(() => {
     //     // This function runs whenever Profile mounts
     //     console.log("I AM HERE GET THE DRINKS GOING")
@@ -36,10 +37,9 @@ function FreeFoodSrc({link, group, title, date, isRestricted}) {
                 <td><a href={link}>{title}</a></td> 
                 <td>{group}</td>
                 <td>{date}</td>
-                <td>{isRestricted}</td>
             </tr>
         </div>
     );
 }
 
-export default FreeFoodTable
+export {FreeFoodTable, FreeFoodSrc};
