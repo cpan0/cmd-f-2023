@@ -1,5 +1,12 @@
 .postingWrap {
+    min-width: 500px;
+    min-height: 500px;
     padding: 5px 5px 5px 5px;
+  }
+
+  .note {
+    min-width: 50vmin;
+    min-height: 50vmin;
   }
 
   
