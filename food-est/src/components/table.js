@@ -1,5 +1,3 @@
-// import React, { useEffect } from "react"
-import "../App.css"
 
 function FreeFoodTable() {
     // useEffect(() => {
@@ -8,7 +6,7 @@ function FreeFoodTable() {
     // }, [])
 
     return (
-        <div class="results">
+        <div className="results">
 			<table id="result-table">
 			    <caption id="table-title">Here's where you can get free food soon on campus:</caption>
 				<thead id = "outputHead">
@@ -44,4 +42,4 @@ function FreeFoodSrc({link, group, title, date, isRestricted}) {
     );
 }
 
-export default {FreeFoodTable, FreeFoodSrc};
+export default FreeFoodTable
