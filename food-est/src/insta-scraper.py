@@ -39,8 +39,8 @@ def get_links(url, strings_to_search):
 
     #if there is a popup, press the button to get rid of it
     try:
-        myElem = WebDriverWait(browser, 15).until(EC.visibility_of_element_located((By.XPATH, "//button[text()='Save Info']")))
-        browser.find_element(By.XPATH, "//button[text()='Save Info']").click()
+        myElem = WebDriverWait(browser, 15).until(EC.visibility_of_element_located((By.XPATH, "//button[text()='Not now']")))
+        browser.find_element(By.XPATH, "//button[text()='Not now']").click()
     except Exception:
         pass           
 
@@ -67,7 +67,7 @@ def get_links(url, strings_to_search):
     #last_height = browser.execute_script("return document.body.scrollHeight")
     i = 1
     # usually about 3-4 posts are on the feed
-    while i<6:
+    while i<4:
         source = browser.page_source
         data = BeautifulSoup(source, 'html.parser')
         # if there is more, press it

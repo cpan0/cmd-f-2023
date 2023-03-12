@@ -10,6 +10,7 @@
 
 # production
 /build
+scraped_data_no_filter.txt
 
 # misc
 .DS_Store
