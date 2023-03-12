@@ -23,8 +23,9 @@ text {
 
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  height: 175px;
+  width: 500px;
+  padding: 0px 0px 0px 0px;
 }
 
 /* @media (prefers-reduced-motion: no-preference) {
@@ -43,6 +44,7 @@ text {
   font-size: calc(10px + 2vmin);
   color: #fefee3;
   /* padding-left: 50px; */
+  padding: 0px 0px 0px 0px;
 }
 
 .App-link {

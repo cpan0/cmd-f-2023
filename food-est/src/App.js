@@ -1,7 +1,7 @@
-import logo from './logo.svg';
+import logo from './logo.png';
 import React from "react"
 import './App.css';
-import FreeFoodTable from './components/table.js';
+// import FreeFoodTable from './components/table.js';
 import FreeFoodSrc from './components/table.js';
 import Collapsible from './components/collapsible.js';
 
@@ -9,10 +9,12 @@ import Collapsible from './components/collapsible.js';
 function App() {
   return (
     <div className="App">
+      <img src={logo} className="App-logo" alt="logo" />
 
       <header className="App-header">
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         
-        <h1>Tuum Eats</h1>
+        {/* <h1>Tuum Eats</h1> */}
         <div className="topnav">
           <a href="/">Home</a>
           <a href="#adtnlResources">Additional Resources</a>
