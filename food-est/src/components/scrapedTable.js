@@ -1,7 +1,7 @@
 // import React, { useEffect } from "react"
 import "../App.css"
 
-function FreeFoodTable() {
+function FreeFoodTable({}) {
     // useEffect(() => {
     //     // This function runs whenever Profile mounts
     //     console.log("I AM HERE GET THE DRINKS GOING")
