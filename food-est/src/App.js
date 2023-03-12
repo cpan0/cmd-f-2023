@@ -1,4 +1,5 @@
 import logo from './logo.png';
+import note from "./note.png";
 import React from "react"
 import './App.css';
 // import FreeFoodTable from './components/table.js';
@@ -22,11 +23,16 @@ function App() {
         </div>
         
         <body>
+          <p id="resultIntro">Here's where you can grab some free food on campus: (you can thank us later;))</p>
+          <div className="postingWrap">
+          <img src={note} alt="Sticky note" style={{width:"50%"}}></img>
+          <div className="posting">heyo heyo heyo heyo heyo heyo heyoooo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo heyo </div>
+          </div>
 
         {/* <div class="search">
 					<button id="search-button" class="button" >🍗 GIMME. DA. FOOD. 🍴</button>
 				</div> */}
-        <table id="foodTable" width="100%">
+        {/* <table id="foodTable" width="100%">
           <caption>Here's where you can grab some free food on campus: (you can thank us later;))</caption>
           <thead>
             <tr>
@@ -37,7 +43,7 @@ function App() {
             </tr>
           </thead>
           <tbody id="foodEvents"></tbody>
-        </table>
+        </table> */}
         <div id="sideInfo">
         <div id="adtlWrapper">
         <div id="adtnlResources">
@@ -80,9 +86,13 @@ function getFood(e) {
   // get array of events
 
   // for each elem:
-  var newElem = React.createElement(FreeFoodSrc, {link:"google.com", group:"SUS", title:"End of year bandquet", date: "May 6, 2026"});
-  document.getElementById("foodT").appendChild(newElem);
-  document.getElementById("foodTable").setAttribute("visibility", "visible");
+  // var newElem = React.createElement(FreeFoodSrc, {link:"google.com", group:"SUS", title:"End of year bandquet", date: "May 6, 2026"});
+
+  // document.getElementById("foodT").appendChild(newElem);
+  // document.getElementById("foodTable").setAttribute("visibility", "visible");
+  
+  // var fs = require("fs");
+  // var text = 
 }
 
 export default App;

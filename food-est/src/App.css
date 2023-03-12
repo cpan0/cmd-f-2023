@@ -178,5 +178,27 @@ div{
 
 }
 
+.postingWrap {
+  position:relative;
+  text-align: center;
+  flex-direction: row;
+
+}
+
+.posting {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  font-family: 'Patrick Hand', cursive, Verdana, Geneva, Tahoma, sans-serif;
+  overflow: scroll;
+  padding:10px;
+}
+
+#resultIntro {
+  margin:"20px";
+  text-align:"left";
+}
 
 
