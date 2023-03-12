@@ -41,6 +41,12 @@ body {
   background-color: #04AA6D;
 }
 
+h1 {
+  position: absolute;
+  top: 50px;
+  margin: 50px;
+}
+
 
 @keyframes App-logo-spin {
   from {

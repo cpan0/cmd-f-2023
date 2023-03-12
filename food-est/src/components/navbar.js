@@ -1,6 +1,7 @@
 
 // import "./navbar.css"
 import "../App.css"
+import React, { useEffect } from "react"
 
 function NavBar() {
     return(
