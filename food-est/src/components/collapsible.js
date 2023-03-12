@@ -4,7 +4,7 @@ import "./collapsible.css";
 function Collapsible({desc}) {
     return (
         <div>
-        <button type="button" class="collapsible">open</button>
+        <button type="button" class="collapsible">Description</button>
         <div class="content">
             <p>{desc}</p>
         </div>
