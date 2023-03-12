@@ -1,17 +1,19 @@
-import logo from './logo.svg';
+import logo from './logo.png';
 import React from "react"
 import './App.css';
-import FreeFoodTable from './components/table.js';
+// import FreeFoodTable from './components/table.js';
 import FreeFoodSrc from './components/table.js';
 import Collapsible from './components/collapsible.js';
 
 function App() {
   return (
     <div className="App">
+      <img src={logo} className="App-logo" alt="logo" />
 
       <header className="App-header">
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         
-        <h1>Tuum Eats</h1>
+        {/* <h1>Tuum Eats</h1> */}
         <div className="topnav">
           <a href="#home">Home</a>
           <a href="#resources">Additional Resources</a>
@@ -20,9 +22,9 @@ function App() {
         
         <body>
 
-        <div class="search">
+        {/* <div class="search">
 					<button id="search-button" class="button" >Give me food pls 🔍</button>
-				</div>
+				</div> */}
         <table id="foodTable" width="100%">
           <caption>Here's where you can grab some free food on campus: (you can thank us later;))</caption>
           <thead>
