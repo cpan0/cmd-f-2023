@@ -66,7 +66,7 @@ def get_links(url, strings_to_search):
     #browser.executeScript("arguments[0].scrollIntoView();", element)
     last_height = browser.execute_script("return document.body.scrollHeight")
     i = 1
-    while i<7:
+    while i<6:
         source = browser.page_source
         data = BeautifulSoup(source, 'html.parser')
 
@@ -78,7 +78,7 @@ def get_links(url, strings_to_search):
 
         #account = data.find("href")
         captions = data.find_all("h1")
-        caption_for_one_post = ' '.join([caption.text for caption in captions])
+        #caption_for_one_post = ' '.join([caption.text for caption in captions])
         #body = data.find('body')
         #script = body.find('span')
 
@@ -98,7 +98,7 @@ def get_links(url, strings_to_search):
             #element = browser.find_element(By.XPATH, "//div")
             browser.execute_script("arguments[0].scrollIntoView();", element)
         except Exception:
-            browser.execute_script("window.scrollBy(0, 800);")
+            browser.execute_script("window.scrollBy(0, 700);")
             pass
         #last_height = browser.execute_script("return document.body.scrollHeight")
         #browser.execute_script("window.scrollBy(0, 900);")
@@ -110,11 +110,14 @@ def get_links(url, strings_to_search):
             print("Sorry! An unexpected error occurred. Please make sure you enter a valid username")
             break """
         
-        for item in strings_to_search:
-            if (item in caption_for_one_post):
-                #links[caption_for_one_post] = account
-                if (caption_for_one_post not in links):
-                    links.append(caption_for_one_post)
+        
+       #for caption in captions:
+       #     if any(s in caption.text for s in strings_to_search):
+       #         if (caption.text not in links):
+       #             links.append(caption.text)
+        for caption in captions:
+            links.append(caption.text)
+
             
         """for link in script.findAll('a'):
             if re.match("/p", link.get('href')):
@@ -133,37 +136,31 @@ def get_links(url, strings_to_search):
     browser.close()
 
     #print(links)
-    #filter_captions(links, string_to_search) 
-    write_to_file(links)
+    filter_captions(links, strings_to_search) 
+    #write_to_file(links)
 
 
-"""
+
 # this searches the string in the caption of all the posts
 def filter_captions(links, strings_to_search):
     filtered_links = []
-    browser = webdriver.Chrome()
     for link in links:
-        browser.get(link)
-        source = browser.page_source
-        data = BeautifulSoup(source, 'html.parser')
-        for text in data.findAll('span'):
-            if strings_to_search.lower() in text.text.lower():
-                if link not in filtered_links:
+            if any(s in link.lower() for s in strings_to_search):
+                if (link not in filtered_links):
                     filtered_links.append(link)
 
     print(len(filtered_links), 'results founds')
-    browser.close()
-    for link in filtered_links:
-        print(link)
-    #write_to_file(filtered_links)
-"""
+    #for link in filtered_links:
+    #    print(link)
+    write_to_file(filtered_links)
+
 
 # finally this stores the resulting links in a txt file
 def write_to_file(links):
-    path = "./"
+    path = "./src"
     os.chdir(path)
     #file_name = input("What would you like to call the file:")
-    file_name = "scraped_data_test"
+    file_name = "scraped_data_no_filter"
     #for link in links:
     #    link.replace("\ud83d\udc9c: ", "")
 
