@@ -93,9 +93,9 @@ if(search_button != null) {
   search_button.addEventListener("click", getFood);
 }
 
-window.onload = function() {
-  alert("wenognvw");
-}
+// window.onload = function() {
+//   alert("wenognvw");
+// }
 
 function getFood(e) {
 
