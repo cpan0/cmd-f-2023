@@ -42,4 +42,5 @@ function FreeFoodSrc({link, group, title, date}) {
     );
 }
 
-export {FreeFoodTable, FreeFoodSrc};
+export default FreeFoodTable;
+export {FreeFoodSrc};
