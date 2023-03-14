@@ -26,8 +26,8 @@ def get_links(url, strings_to_search):
     browser = webdriver.Chrome()
     browser.get(url)
 
-    ig_phone = "ks.ivanova1989"
-    ig_pass = "password1989"
+    ig_phone = "username"
+    ig_pass = "password"
     
     # log in the account
     #myElem = WebDriverWait(browser, 15).until(EC.visibility_of_element_located((By.XPATH, "//div[text()='Log in']")))
